@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Blog</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Form đăng ký -->
+    <div id="register-section">
+      <h2>Đăng ký</h2>
+      <input id="reg-username" type="text" placeholder="Tên đăng nhập" required>
+      <input id="reg-password" type="password" placeholder="Mật khẩu" required>
+      <button onclick="register()">Đăng ký</button>
+      <p>Đã có tài khoản? <a href="#" onclick="showLogin()">Đăng nhập</a></p>
+    </div>
+
+    <!-- Form đăng nhập -->
+    <div id="login-section" class="hidden">
+      <h2>Đăng nhập</h2>
+      <input id="login-username" type="text" placeholder="Tên đăng nhập" required>
+      <input id="login-password" type="password" placeholder="Mật khẩu" required>
+      <button onclick="login()">Đăng nhập</button>
+      <p>Chưa có tài khoản? <a href="#" onclick="showRegister()">Đăng ký</a></p>
+    </div>
+
+    <!-- Khu vực blog -->
+    <div id="blog-section" class="hidden">
+      <h2>Chào, <span id="current-user"></span>!</h2>
+      <button onclick="logout()">Đăng xuất</button>
+
+      <h3>Thêm bài viết</h3>
+      <input id="post-title" type="text" placeholder="Tiêu đề bài viết" required>
+      <textarea id="post-content" placeholder="Nội dung bài viết" required></textarea>
+      <button onclick="addPost()">Đăng bài</button>
+
+      <h3>Danh sách bài viết</h3>
+      <div id="posts"></div>
+    </div>
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
