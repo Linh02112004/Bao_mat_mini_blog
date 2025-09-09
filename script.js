@@ -135,3 +135,36 @@ if (currentUser) {
 } else {
   showLogin();
 }
+// ===================== BRUTE FORCE DEMO =====================
+function bruteForceAttack(targetUsername) {
+  console.log(`🔍 Đang brute force mật khẩu cho user: ${targetUsername}`);
+
+  // Danh sách mật khẩu giả lập để thử
+  const commonPasswords = [
+    "123456", "password", "admin", "12345678", "qwerty", "abc123",
+    "123123", "111111", "1234", "letmein", "12345", "pass"
+  ];
+
+  // Tìm user trong localStorage
+  const targetUser = users.find(u => u.username === targetUsername);
+  if (!targetUser) {
+    console.log("❌ User không tồn tại!");
+    return;
+  }
+
+  // Thử từng mật khẩu
+  let found = false;
+  for (let i = 0; i < commonPasswords.length; i++) {
+    console.log(`🔑 Thử mật khẩu: ${commonPasswords[i]}`);
+    if (commonPasswords[i] === targetUser.password) {
+      console.log(`✅ Thành công! Mật khẩu của ${targetUsername} là: ${targetUser.password}`);
+      alert(`Đã tìm thấy mật khẩu của ${targetUsername}: ${targetUser.password}`);
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    console.log("❌ Không tìm thấy mật khẩu trong danh sách!");
+  }
+}
