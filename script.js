@@ -135,25 +135,3 @@ if (currentUser) {
 } else {
   showLogin();
 }
-// ================== MÔ PHỎNG TẤN CÔNG BRUTE FORCE ==================
-const passwordList = ["123456", "password", "qwerty", "abc123", "admin"];
-
-// Giả sử tài khoản admin có mật khẩu là abc123
-const correctUsername = "admin";
-const correctPassword = "abc123";
-
-function bruteForceLogin() {
-  console.log("=== BẮT ĐẦU TẤN CÔNG BRUTE FORCE ===");
-  for (let i = 0; i < passwordList.length; i++) {
-    console.log(`Thử mật khẩu: ${passwordList[i]}`);
-
-    if (passwordList[i] === correctPassword) {
-      console.log(`✅ Đăng nhập thành công với mật khẩu: ${passwordList[i]}`);
-      break;
-    }
-  }
-  console.log("=== KẾT THÚC BRUTE FORCE ===");
-}
-
-// Gọi hàm brute force để mô phỏng
-bruteForceLogin();
